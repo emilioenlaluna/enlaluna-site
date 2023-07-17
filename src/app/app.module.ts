@@ -11,6 +11,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { ServicesComponent } from './components/services/services.component';
 import { MeComponent } from './components/me/me.component';
 import { OtherComponent } from './components/other/other.component';
+import { CvComponent } from './components/cv/cv.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { OtherComponent } from './components/other/other.component';
     ExperienceComponent,
     ServicesComponent,
     MeComponent,
-    OtherComponent
+    OtherComponent,
+    CvComponent
   ],
   imports: [
     BrowserModule,
