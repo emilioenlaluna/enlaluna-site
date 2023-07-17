@@ -1,8 +1,7 @@
-export interface Other {
+export interface Me {
     $key?: string;
     title: string;
     content: string;
     imagen: string;
-    githubLink?: string;
     url?: string;
 }
