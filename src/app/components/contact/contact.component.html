@@ -1,1 +1,56 @@
-<p>contact works!</p>
+<main>
+    <section>
+      <h3>{{ 'contact.contactTitle' | transloco }}</h3>
+      <h4>{{ 'contact.contactSubtitle' | transloco }}</h4>
+      <article>
+        <form [formGroup]="contactForm" (ngSubmit)="submitContactData()" novalidate>
+          <label>{{ 'contact.firstNameLabel' | transloco }}</label>
+          <input type="text" formControlName="nombre" class="form-control" required />
+          <p *ngIf="contactForm.controls['nombre'].errors?.['required']" class="error">
+            <sup>*</sup>{{ 'contact.firstNameRequiredError' | transloco }}
+          </p>
+          <p *ngIf="contactForm.controls['nombre'].errors?.['minlength']" class="error">
+            <sup>*</sup>{{ 'contact.firstNameMinLengthError' | transloco }}
+          </p>
+  
+          <label>{{ 'contact.matterLabel' | transloco }}</label>
+          <input type="text" formControlName="asunto" class="form-control" />
+          <p *ngIf="contactForm.controls['asunto'].errors?.['required']" class="error">
+            <sup>*</sup>{{ 'contact.matterRequiredError' | transloco }}
+          </p>
+          <p *ngIf="contactForm.controls['asunto'].errors?.['minlength']" class="error">
+            <sup>*</sup>{{ 'contact.matterMinLengthError' | transloco }}
+          </p>
+  
+          <label>{{ 'contact.emailLabel' | transloco }}</label>
+          <input type="email" formControlName="correo" class="form-control" required />
+          <p *ngIf="contactForm.controls['correo'].errors?.['required']" class="error">
+            <sup>*</sup>{{ 'contact.emailRequiredError' | transloco }}
+          </p>
+  
+          <label>{{ 'contact.mobileNumberLabel' | transloco }}</label>
+          <input type="text" formControlName="numero" class="form-control" required />
+          <p *ngIf="contactForm.controls['numero'].errors?.['required']" class="error">
+            <sup>*</sup>{{ 'contact.mobileNumberRequiredError' | transloco }}
+          </p>
+  
+          <label>{{ 'contact.descriptionLabel' | transloco }}</label>
+          <input type="text" formControlName="descripcion" class="form-control" required />
+          <p *ngIf="contactForm.controls['descripcion'].errors?.['required']" class="error">
+            <sup>*</sup>{{ 'contact.descriptionRequiredError' | transloco }}
+          </p>
+          <p *ngIf="contactForm.controls['descripcion'].errors?.['minlength']" class="error">
+            <sup>*</sup>{{ 'contact.descriptionMinLengthError' | transloco }}
+          </p>
+  
+          <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">
+            {{ 'contact.resetButton' | transloco }}
+          </button>
+          <button type="submit" class="btn btn-success" [disabled]="!contactForm.valid">
+            {{ 'contact.sendButton' | transloco }}
+          </button>
+        </form>
+      </article>
+    </section>
+  </main>
+  

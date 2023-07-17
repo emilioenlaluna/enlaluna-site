@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div class="languaje">
+    <button *ngFor="let language of languagesList; index as i" (click)="changeLanguage(language.code)"
+      class="boton-oculto">
+      <img [src]="language.imgUrl" [alt]="language.name" />
+      <span>{{ language.shorthand }}</span>
+    </button>
+  </div>
+  <router-outlet></router-outlet>

@@ -1,0 +1,19 @@
+{"contact": {
+    "contactTitle": "Contáctanos",
+    "contactSubtitle": "Dinos tus opiniones, sugerencias y errores",
+    "firstNameLabel": "Nombre",
+    "firstNameRequiredError": "Por favor ingresa al menos un nombre",
+    "firstNameMinLengthError": "El nombre no debe tener menos de 2 palabras",
+    "matterLabel": "Asunto",
+    "matterRequiredError": "Por favor ingresa un asunto",
+    "matterMinLengthError": "El asunto no debe tener menos de 2 palabras",
+    "emailLabel": "Email",
+    "emailRequiredError": "Por favor proporciona un email",
+    "mobileNumberLabel": "Número de teléfono",
+    "mobileNumberRequiredError": "Por favor proporciona un número de contacto",
+    "descriptionLabel": "Descripción",
+    "descriptionRequiredError": "Por favor ingresa una descripción",
+    "descriptionMinLengthError": "La descripción no debe tener menos de 15 palabras",
+    "resetButton": "Reiniciar",
+    "sendButton": "Enviar"
+  }}

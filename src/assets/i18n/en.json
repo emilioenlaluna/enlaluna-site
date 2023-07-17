@@ -1,0 +1,19 @@
+{"contact": {
+    "contactTitle": "Contact us",
+    "contactSubtitle": "Tell us your opinion, advices y issues",
+    "firstNameLabel": "First name",
+    "firstNameRequiredError": "Please enter at least first name",
+    "firstNameMinLengthError": "Name shouldn't be less than 2 words",
+    "matterLabel": "Matter, Issue, Subject",
+    "matterRequiredError": "Please enter Matter",
+    "matterMinLengthError": "Matter shouldn't be less than 2 words",
+    "emailLabel": "Email",
+    "emailRequiredError": "Please provide email",
+    "mobileNumberLabel": "Mobile number",
+    "mobileNumberRequiredError": "Please provide contact number",
+    "descriptionLabel": "Description",
+    "descriptionRequiredError": "Please enter Description",
+    "descriptionMinLengthError": "Description shouldn't be less than 15 words",
+    "resetButton": "Reset",
+    "sendButton": "Send"
+  }}
