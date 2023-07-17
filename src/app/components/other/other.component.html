@@ -1,1 +1,54 @@
-<p>other works!</p>
+<div *ngIf="auth.isLoggedIn">
+    <form [formGroup]="otherForm" (ngSubmit)="submitOtherData()" novalidate>
+      <label>Title</label>
+      <input type="text" formControlName="title" class="full-width" required />
+      <p *ngIf="otherForm.controls['title'].errors?.['required']" class="error">
+        <sup>*</sup>Title required
+      </p>
+  
+      <label>Content</label>
+      <input type="text" formControlName="content" class="full-width" required />
+      <p *ngIf="otherForm.controls['content'].errors?.['required']" class="error">
+        <sup>*</sup>Content required
+      </p>
+  
+      <label>Image</label>
+      <input type="text" formControlName="imagen" class="full-width" required />
+      <p *ngIf="otherForm.controls['imagen'].errors?.['required']" class="error">
+        <sup>*</sup>Image Required
+      </p>
+  
+      <label>Github Link</label>
+      <input type="text" formControlName="githubLink" class="full-width" />
+      <!-- No es requerido, por lo que no hay mensaje de error -->
+  
+      <label>URL</label>
+      <input type="text" formControlName="url" class="full-width" />
+      <!-- No es requerido, por lo que no hay mensaje de error -->
+  
+      <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+      <button type="submit" class="btn btn--primary btn-wide btn--large full-width" [disabled]="!otherForm.valid">
+        Send
+      </button>
+    </form>
+  </div>
+  
+  <hr>
+  <ul>
+    <li *ngFor="let other of others">
+      <!-- Mostrar los campos de la Other -->
+      <h3>{{ other.$key }}</h3>
+      <h3>{{ other.title }}</h3>
+      <p>{{ other.content }}</p>
+      <p>{{ other.imagen }}</p>
+      <p>{{ other.githubLink }}</p>
+      <p>{{ other.url }}</p>
+  
+      <div *ngIf="auth.isLoggedIn">
+        <button class="btn btn-danger" (click)="deleteOther(other.$key)">Eliminar</button>
+      </div>
+  
+      <hr>
+    </li>
+  </ul>
+  

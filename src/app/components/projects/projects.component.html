@@ -1,4 +1,5 @@
-<form [formGroup]="projectForm" (ngSubmit)="submitProjectData()" novalidate>
+<div *ngIf="auth.isLoggedIn">
+  <form [formGroup]="projectForm" (ngSubmit)="submitProjectData()" novalidate>
     <label>Name</label>
     <input type="text" formControlName="name" class="full-width" required />
     <p *ngIf="projectForm.controls['name'].errors?.['required']" class="error">
@@ -57,6 +58,8 @@
      Send
     </button>
   </form>
+</div>
+
   <hr>
   <ul>
     <li *ngFor="let project of projects">
@@ -68,7 +71,10 @@
       <p>{{ project.endDate }}</p>
       <p>{{ project.imagen }}</p>
       <p>{{ project.githubLink }}</p>
-      <button class="btn btn-danger" (click)="deleteProject(project.$key)">Eliminar</button>
+      <div *ngIf="auth.isLoggedIn">
+        <button class="btn btn-danger" (click)="deleteProject(project.$key)">Eliminar</button>
+      </div>
+      
       <a *ngIf="project.githubLink" [href]="project.githubLink" target="_blank">GitHub Repository</a>
       <hr>
     </li>

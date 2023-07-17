@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { Project } from 'src/app/shared/services/project';
 import { ProjectService } from 'src/app/shared/services/project.service';
 
@@ -19,7 +20,7 @@ export class ProjectsComponent implements OnInit {
     githubLink: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private projectservice: ProjectService) {
+  constructor(public auth:AuthService,private fb: FormBuilder, private projectservice: ProjectService) {
   }
 
 

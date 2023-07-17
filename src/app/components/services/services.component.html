@@ -1,1 +1,61 @@
-<p>services works!</p>
+<div *ngIf="auth.isLoggedIn">
+    <form [formGroup]="serviceForm" (ngSubmit)="submitServiceData()" novalidate>
+      <label>Name</label>
+      <input type="text" formControlName="name" class="full-width" required />
+      <p *ngIf="serviceForm.controls['name'].errors?.['required']" class="error">
+        <sup>*</sup>Name required
+      </p>
+  
+      <label>Description</label>
+      <input type="text" formControlName="description" class="full-width" required />
+      <p *ngIf="serviceForm.controls['description'].errors?.['required']" class="error">
+        <sup>*</sup>Description required
+      </p>
+  
+      <label>Image</label>
+      <input type="text" formControlName="imagen" class="full-width" required />
+      <p *ngIf="serviceForm.controls['imagen'].errors?.['required']" class="error">
+        <sup>*</sup>Image Required
+      </p>
+  
+      <label>Price</label>
+      <input type="text" formControlName="price" class="full-width" required />
+      <p *ngIf="serviceForm.controls['price'].errors?.['required']" class="error">
+        <sup>*</sup>Price Required
+      </p>
+  
+      <label>URL</label>
+      <input type="text" formControlName="url" class="full-width" />
+      <!-- No es requerido, por lo que no hay mensaje de error -->
+  
+      <label>Time</label>
+      <input type="text" formControlName="time" class="full-width" />
+      <!-- No es requerido, por lo que no hay mensaje de error -->
+  
+      <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+      <button type="submit" class="btn btn--primary btn-wide btn--large full-width" [disabled]="!serviceForm.valid">
+        Send
+      </button>
+    </form>
+  </div>
+  
+  <hr>
+  <ul>
+    <li *ngFor="let service of services">
+      <!-- Mostrar los campos del Service -->
+      <h3>{{ service.$key }}</h3>
+      <h3>{{ service.name }}</h3>
+      <p>{{ service.description }}</p>
+      <p>{{ service.imagen }}</p>
+      <p>{{ service.price }}</p>
+      <p>{{ service.url }}</p>
+      <p>{{ service.time }}</p>
+  
+      <div *ngIf="auth.isLoggedIn">
+        <button class="btn btn-danger" (click)="deleteService(service.$key)">Eliminar</button>
+      </div>
+  
+      <hr>
+    </li>
+  </ul>
+  

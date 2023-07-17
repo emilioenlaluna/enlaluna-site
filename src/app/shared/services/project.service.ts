@@ -21,6 +21,8 @@ export class ProjectService {
   AddProject(project: Project) {
     this.projectsCollection.add(project);
   }
+
+  
   GetProjectsList(): Observable<Project[]> {
     return this.projectsCollection.snapshotChanges().pipe(
       map((changes) => {

@@ -1,1 +1,49 @@
-<p>me works!</p>
+<div *ngIf="auth.isLoggedIn">
+    <form [formGroup]="meForm" (ngSubmit)="submitMeData()" novalidate>
+      <label>Title</label>
+      <input type="text" formControlName="title" class="full-width" required />
+      <p *ngIf="meForm.controls['title'].errors?.['required']" class="error">
+        <sup>*</sup>Title required
+      </p>
+  
+      <label>Content</label>
+      <input type="text" formControlName="content" class="full-width" required />
+      <p *ngIf="meForm.controls['content'].errors?.['required']" class="error">
+        <sup>*</sup>Content required
+      </p>
+  
+      <label>Image</label>
+      <input type="text" formControlName="imagen" class="full-width" required />
+      <p *ngIf="meForm.controls['imagen'].errors?.['required']" class="error">
+        <sup>*</sup>Image Required
+      </p>
+  
+      <label>URL</label>
+      <input type="text" formControlName="url" class="full-width" />
+      <!-- No es requerido, por lo que no hay mensaje de error -->
+  
+      <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+      <button type="submit" class="btn btn--primary btn-wide btn--large full-width" [disabled]="!meForm.valid">
+        Send
+      </button>
+    </form>
+  </div>
+  
+  <hr>
+  <ul>
+    <li *ngFor="let me of meList">
+      <!-- Mostrar los campos de Me -->
+      <h3>{{ me.$key }}</h3>
+      <h3>{{ me.title }}</h3>
+      <p>{{ me.content }}</p>
+      <p>{{ me.imagen }}</p>
+      <p>{{ me.url }}</p>
+  
+      <div *ngIf="auth.isLoggedIn">
+        <button class="btn btn-danger" (click)="deleteMe(me.$key)">Eliminar</button>
+      </div>
+  
+      <hr>
+    </li>
+  </ul>
+  

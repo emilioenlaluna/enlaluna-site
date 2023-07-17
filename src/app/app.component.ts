@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from './shared/services/auth.service';
 import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
@@ -8,7 +7,7 @@ import { TranslocoService } from '@ngneat/transloco';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- constructor(public auth:AuthService,private translocoService: TranslocoService){
+ constructor(private translocoService: TranslocoService){
 
  }
 
@@ -22,7 +21,7 @@ export class AppComponent {
  },
 
  {
-   imgUrl: '/assets/images/Persian.png',
+   imgUrl: '/assets/images/castellano.png',
    code: 'es',
    name: 'Español',
    shorthand: 'ES',

@@ -1,1 +1,65 @@
-<p>education works!</p>
+<div *ngIf="auth.isLoggedIn">
+    <form [formGroup]="educationForm" (ngSubmit)="submitEducationData()" novalidate>
+      <label>Institution</label>
+      <input type="text" formControlName="institution" class="full-width" required />
+      <p *ngIf="educationForm.controls['institution'].errors?.['required']" class="error">
+        <sup>*</sup>Institution required
+      </p>
+  
+      <label>Degree</label>
+      <input type="text" formControlName="degree" class="full-width" required />
+      <p *ngIf="educationForm.controls['degree'].errors?.['required']" class="error">
+        <sup>*</sup>Degree required
+      </p>
+  
+      <label>Start Date</label>
+      <input type="text" formControlName="startDate" class="full-width" required />
+      <p *ngIf="educationForm.controls['startDate'].errors?.['required']" class="error">
+        <sup>*</sup>Start Date Required
+      </p>
+  
+      <label>End Date</label>
+      <input type="text" formControlName="endDate" class="full-width" required />
+      <p *ngIf="educationForm.controls['endDate'].errors?.['required']" class="error">
+        <sup>*</sup>End Date Required
+      </p>
+  
+      <label>Description</label>
+      <input type="text" formControlName="descripcion" class="full-width" required />
+      <p *ngIf="educationForm.controls['descripcion'].errors?.['required']" class="error">
+        <sup>*</sup>Description required
+      </p>
+  
+      <label>Image</label>
+      <input type="text" formControlName="imagen" class="full-width" required />
+      <p *ngIf="educationForm.controls['imagen'].errors?.['required']" class="error">
+        <sup>*</sup>Image Required
+      </p>
+  
+      <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+      <button type="submit" class="btn btn--primary btn-wide btn--large full-width" [disabled]="!educationForm.valid">
+        Send
+      </button>
+    </form>
+  </div>
+  
+  <hr>
+  <ul>
+    <li *ngFor="let education of educations">
+      <!-- Mostrar los campos de la educación -->
+      <h3>{{ education.$key }}</h3>
+      <h3>{{ education.institution }}</h3>
+      <p>{{ education.degree }}</p>
+      <p>{{ education.startDate }}</p>
+      <p>{{ education.endDate }}</p>
+      <p>{{ education.descripcion }}</p>
+      <p>{{ education.imagen }}</p>
+  
+      <div *ngIf="auth.isLoggedIn">
+        <button class="btn btn-danger" (click)="deleteEducation(education.$key)">Eliminar</button>
+      </div>
+  
+      <hr>
+    </li>
+  </ul>
+  
