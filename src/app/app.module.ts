@@ -13,6 +13,19 @@ import { MeComponent } from './components/me/me.component';
 import { OtherComponent } from './components/other/other.component';
 import { CvComponent } from './components/cv/cv.component';
 
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { AuthService } from './shared/services/auth.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './components/home/home.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,15 +36,21 @@ import { CvComponent } from './components/cv/cv.component';
     ServicesComponent,
     MeComponent,
     OtherComponent,
-    CvComponent
+    CvComponent,
+    DashboardComponent,
+    SignInComponent,
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    PdfViewerModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
   ],
-  providers: [],
+  providers: [AuthService,{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
