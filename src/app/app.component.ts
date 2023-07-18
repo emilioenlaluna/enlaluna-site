@@ -14,14 +14,14 @@ export class AppComponent {
  public languagesList: 
  Array<Record<'imgUrl' | 'code' | 'name' | 'shorthand', string>> = [
  {
-   imgUrl: '/assets/images/English.png',
+   imgUrl: '/assets/uk.png',
    code: 'en',
    name: 'English',
    shorthand: 'ENG',
  },
 
  {
-   imgUrl: '/assets/images/castellano.png',
+   imgUrl: '/assets/spain.png',
    code: 'es',
    name: 'Español',
    shorthand: 'ES',
