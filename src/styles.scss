@@ -1,2 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Raleway:wght@300&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #F6F5F5;
+    border-radius:   0 0 5em 5em;
+    padding: 3%;
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+
+        h1 {
+            font-family: 'Inconsolata', monospace;
+
+        }
+
+        ul {
+            font-family: 'Raleway', sans-serif;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+
+            li {
+                margin: 1em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .items-bar-hide {
+            display: none;
+
+
+        }
+
+        @media (max-width:900px) {
+            flex-direction: column;
+        }
+
+        @media (max-width:680px) {
+            .items-bar-hide {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                background-color: #F6F5F5;
+                padding: 1em;
+                border-radius:  5em 5em 0 0 ;
+            }
+
+            .items-bar {
+                display: none;
+            }
+        }
+    }
+
+
+}
+
+
+
+
+footer {
+    background-color: #F6F5F5;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3%;
+    font-family: 'Raleway', sans-serif;
+    border-radius:  5em 5em 0 0 ;
+    div {
+        margin: 3%;
+
+        ul {
+            list-style: none;
+
+            li {
+                margin-top: 2em;
+
+                a {
+                    text-decoration: none;
+
+                }
+            }
+
+        }
+    }
+
+    @media (max-width:900px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (max-width:680px) {
+        grid-template-columns: 100%;
+
+    }
+}
