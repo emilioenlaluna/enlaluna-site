@@ -1,3 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Raleway:wght@300&display=swap');
+header {
+    background-color: #F6F5F5;
+    border-radius: 0 0 5em 5em;
+    padding: 3%;
+    color: black;
+    z-index: 100000000000000;
+
+    a, a:visited, a:hover, a:active {
+        color: black;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+
+        h1 {
+            font-family: 'Inconsolata', monospace;
+            text-decoration: none;
+
+        }
+
+        h1:visited {
+            font-family: 'Inconsolata', monospace;
+            color: black;
+            text-decoration: none;
+        }
+
+        ul {
+            width: 65%;
+            font-family: 'Raleway', sans-serif;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+
+            li {
+                a{
+                    text-decoration: none;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    
+                }
+
+            }
+
+
+        }
+
+        .items-bar-hide {
+            display: none;
+
+        }
+
+        @media (max-width:900px) {
+            flex-direction: column;
+            ul{
+                width: 90%;
+                padding-top: 2%;
+            }
+            
+        }
+
+        @media (max-width:680px) {
+            .items-bar-hide {
+                padding: 3%;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                background-color: #F6F5F5;
+
+                border-radius: 5em 5em 0 0;
+            }
+
+            .items-bar {
+                display: none;
+            }
+            h1{
+                padding: 3%;
+            }
+        }
+        @media (max-width:320px) {
+            .items-bar-hide {
+                p{
+                    font-size: .7em;
+                }
+                padding: 5%;
+            }
+        }
+    }
+
+
+}
+
 .languaje{    
     position: fixed;
     top:22%;
@@ -18,4 +123,47 @@
         }
     }
     
+}
+
+
+
+footer {
+    background-color: #F6F5F5;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3%;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 5em 5em 0 0;
+
+    div {
+        margin: 3%;
+
+        ul {
+            list-style: none;
+
+            li {
+                margin-top: 2em;
+
+                a, a:visited, a:hover, a:active {
+                    color: black;
+                    text-decoration: none;
+                }
+            }
+
+        }
+    }
+
+    @media (max-width:900px) {
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+    }
+
+    @media (max-width:680px) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
 }
