@@ -17,7 +17,7 @@ export class AppComponent {
    imgUrl: '/assets/uk.png',
    code: 'en',
    name: 'English',
-   shorthand: 'ENG',
+   shorthand: 'EN',
  },
 
  {
