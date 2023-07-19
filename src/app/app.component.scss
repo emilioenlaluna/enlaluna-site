@@ -2,7 +2,7 @@
 header {
     background-color: #F6F5F5;
     border-radius: 0 0 5em 5em;
-    padding: 3%;
+    padding: 1%;
     color: black;
     z-index: 100000000000000;
 
@@ -40,6 +40,7 @@ header {
             justify-content: space-around;
 
             li {
+                padding: 1em;
                 a{
                     text-decoration: none;
                     display: flex;
@@ -49,6 +50,11 @@ header {
                     
                 }
 
+            }
+            li:hover{
+                background-color:#dfdddd;
+                border-radius: 5em;
+                padding: 1em;
             }
 
 
@@ -81,6 +87,12 @@ header {
                 background-color: #F6F5F5;
 
                 border-radius: 5em 5em 0 0;
+                li{
+                    padding: 0;
+                }
+                li:hover{
+                    padding: 0;
+                }
             }
 
             .items-bar {
@@ -90,7 +102,7 @@ header {
                 padding: 3%;
             }
         }
-        @media (max-width:320px) {
+        @media (max-width:400px) {
             .items-bar-hide {
                 p{
                     font-size: .7em;
@@ -106,7 +118,7 @@ header {
 .languaje{    
     position: fixed;
     top:22%;
-    right: 1%;
+    right: .5%;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
@@ -146,11 +158,17 @@ footer {
 
             li {
                 margin-top: 2em;
+                padding: 1em;
 
                 a, a:visited, a:hover, a:active {
                     color: black;
                     text-decoration: none;
                 }
+            }
+            li:hover{
+                background-color:#dfdddd;
+                border-radius: 5em;
+                padding: 1em;
             }
 
         }
@@ -159,7 +177,16 @@ footer {
     @media (max-width:900px) {
         flex-wrap: wrap;
         flex-direction: column;
-        
+        div{
+            ul{
+                
+                    li{
+                        margin: 2em;
+                        padding: 1em;
+                    }
+                
+            }
+        }
     }
 
     @media (max-width:680px) {
