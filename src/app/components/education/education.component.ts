@@ -7,7 +7,7 @@ import { EducationService } from 'src/app/shared/services/education.service';
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
-  styleUrls: ['./education.component.css']
+  styleUrls: ['./education.component.scss']
 })
 export class EducationComponent {
   public educationForm: FormGroup = this.fb.group({

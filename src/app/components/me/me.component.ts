@@ -7,7 +7,7 @@ import { MeService } from 'src/app/shared/services/me.service';
 @Component({
   selector: 'app-me',
   templateUrl: './me.component.html',
-  styleUrls: ['./me.component.css']
+  styleUrls: ['./me.component.scss']
 })
 export class MeComponent implements OnInit {
   public meForm: FormGroup = this.fb.group({

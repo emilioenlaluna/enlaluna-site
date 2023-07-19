@@ -7,7 +7,7 @@ import { ProjectService } from 'src/app/shared/services/project.service';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
   public projectForm: FormGroup = this.fb.group({

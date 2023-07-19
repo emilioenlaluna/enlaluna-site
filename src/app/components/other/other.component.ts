@@ -7,7 +7,7 @@ import {OtherService } from 'src/app/shared/services/other.service';
 @Component({
   selector: 'app-other',
   templateUrl: './other.component.html',
-  styleUrls: ['./other.component.css']
+  styleUrls: ['./other.component.scss']
 })
 export class OtherComponent {
   public otherForm: FormGroup = this.fb.group({
