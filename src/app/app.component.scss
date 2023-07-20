@@ -5,11 +5,11 @@ header {
     background-color: #F6F5F5;
     border-radius: 0 0 5em 5em;
     padding: 1%;
-    color: black;
+    color: #2d3436;
     z-index: 100000000000000;
 
     a, a:visited, a:hover, a:active {
-        color: black;
+        color: #2d3436;
     }
 
     nav {
@@ -28,7 +28,7 @@ header {
 
         h1:visited {
             font-family: 'Inconsolata', monospace;
-            color: black;
+            color: #2d3436;
             text-decoration: none;
         }
 
@@ -44,7 +44,7 @@ header {
             li {
                 
                 a{
-                    padding: 1em;
+                    padding: .5em;
                     text-decoration: none;
                     display: flex;
                     flex-direction: column;
@@ -56,7 +56,7 @@ header {
                 a:hover{
                     background-color:#dfdddd;
                     border-radius: 5em;
-                    padding: 1em;
+                    padding: .5em;
                 }
 
             }
@@ -124,32 +124,34 @@ header {
 
 .languaje{    
     position: fixed;
-    top:22%;
+    top:18%;
     right: .5%;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
     button{  
-        padding: .5em;
+        margin: .1rem;
         border-style: none;
-        background-color: #F6F5F5; 
+        
         border-radius: 5em;
+        width: 2rem;
+        height: 2rem;
         img{
-            width:2em;
-            height: 1em;
+            width: 2rem;
+            height: 2rem;
             border-radius: 5em;
         }
     }
     button:hover{
-        padding: .5em;
-        border-style: none;
-        background-color: #cfcece; 
         border-radius: 5em;
+        border-style: none;
+        width: 2rem;
+        height: 2rem;
         cursor: pointer;
         img{
-            width:2em;
-            height: 1em;
+            width: 2rem;
+            height: 2rem;
             border-radius: 5em;
         }
     }
@@ -162,10 +164,11 @@ header {
   }
   
   .toggle-label {
-    position: relative;
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
+    position: fixed;
+    top:29%;
+    right: .5%;
+    width: 2rem;
+    height: 2rem;
     overflow: hidden;
     cursor: pointer;
   }
@@ -173,7 +176,7 @@ header {
   .sun,
   .moon {
     position: absolute;
-    left: 0;
+    right: 0;
     width: 100%;
     height: auto;
     transition: top 0.3s;
@@ -210,7 +213,7 @@ footer {
 
     div {
         margin: 3%;
-
+        color: #2d3436;
         ul {
             list-style: none;
 
@@ -219,7 +222,7 @@ footer {
                 padding: 1em;
 
                 a, a:visited, a:hover, a:active {
-                    color: black;
+                    color: #2d3436;
                     text-decoration: none;
                 }
             }

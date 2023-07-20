@@ -1,0 +1,140 @@
+main {
+
+    section {
+
+        font-family: 'Inconsolata', monospace;
+        margin: 1em;
+        padding: 3em;
+        border-radius: 5em;
+
+
+
+        article {
+            padding: 2em;
+
+            h2 {
+                font-size: 2rem;
+
+            }
+
+            h3 {
+                font-family: 'Raleway', sans-serif;
+                font-size: 1.2rem;
+            }
+
+
+        }
+
+        article.contact {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin:1em;
+
+            .info {
+                font-size: 1em;
+
+                p.head-contact {
+                    font-weight: 500;
+                    font-size: 1.5em;
+                }
+
+                p.body-contact {
+                    font-size: 1em;
+                }
+
+
+            }
+
+            .contact-form {
+                margin:1em;
+                form {
+                    display: flex;
+                    flex-direction: column;
+                   
+                    
+
+                    label {
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1.2rem;
+
+                        margin: .5em;
+                    }
+
+                    input {
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1.2rem;
+                        padding: .5em;
+
+                        border-radius: 5em;
+                        border-color: #2d3436;
+                        border-style: none;
+                        background-color: #F6F5F5;
+                    }
+
+                    input:focus,
+                    input:active {
+                        outline: none;
+                        border: none;
+                        box-shadow: none;
+                    }
+
+                    p {
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1.2rem;
+                        color: red;
+
+                        margin: .5em;
+                    }
+
+                    button {
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1.2rem;
+                        padding: .5em;
+                        margin: .5em;
+                        border-radius: 5em;
+                        border-color: #2d3436;
+                        border-style: solid;
+
+
+                        background-color: #F6F5F5;
+                    }
+                    button:hover{
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1.2rem;
+                        padding: .5em;
+                        margin: .5em;
+                        border-radius: 5em;
+                        border-color: #2d3436;
+                        border-style: solid;
+                        cursor:pointer;
+
+                        background-color: #F6F5F5;
+                    }
+                    button:disabled{
+                        font-family: 'Raleway', sans-serif;
+                        font-size: 1.2rem;
+                        padding: .5em;
+                        margin: .5em;
+                        border-radius: 5em;
+                        border-color: #2d3436;
+                        border-style: solid;
+                        cursor:not-allowed;
+
+                        background-color: #F6F5F5;
+                    }
+                }
+            }
+
+
+        }
+
+        @media(max-width:900px) {
+            article.contact {
+
+                flex-direction: column;
+
+            }
+        }
+    }
+}
