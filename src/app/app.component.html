@@ -94,6 +94,25 @@
   </div>
   <router-outlet></router-outlet>
 
+  <input
+  id="darkMode"
+  type="checkbox"
+  [checked]="darkMode$ | async"
+  (change)="onToggle()"
+  class="toggle"
+/>
+<label class="toggle-label" for="darkMode">
+  <img
+    src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/moon.svg"
+    class="moon"
+  />
+  <img
+    src="https://raw.githubusercontent.com/talohana/angular-dark-mode/master/src/assets/sun.svg"
+    class="sun"
+  />
+</label>
+
+
   <footer>
     <div>
       <ul>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslocoService } from '@ngneat/transloco';
+import { DarkModeService } from 'angular-dark-mode';
+
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,8 @@ import { TranslocoService } from '@ngneat/transloco';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
- constructor(private translocoService: TranslocoService){
+  darkMode$ = this.darkModeService.darkMode$;
+ constructor(private translocoService: TranslocoService,private darkModeService: DarkModeService){
 
  }
 
@@ -32,5 +35,8 @@ public changeLanguage(languageCode: string): void {
  languageCode === 'fa'
    ? (document.body.style.direction = 'rtl')
    : (document.body.style.direction = 'ltr');
+}
+onToggle(): void {
+  this.darkModeService.toggle();
 }
 }

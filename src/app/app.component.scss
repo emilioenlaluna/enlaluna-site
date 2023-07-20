@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Raleway:wght@300&display=swap');
+
+
 header {
     background-color: #F6F5F5;
     border-radius: 0 0 5em 5em;
@@ -40,8 +42,9 @@ header {
             justify-content: space-around;
 
             li {
-                padding: 1em;
+                
                 a{
+                    padding: 1em;
                     text-decoration: none;
                     display: flex;
                     flex-direction: column;
@@ -50,12 +53,14 @@ header {
                     
                 }
 
+                a:hover{
+                    background-color:#dfdddd;
+                    border-radius: 5em;
+                    padding: 1em;
+                }
+
             }
-            li:hover{
-                background-color:#dfdddd;
-                border-radius: 5em;
-                padding: 1em;
-            }
+            
 
 
         }
@@ -115,6 +120,8 @@ header {
 
 }
 
+
+
 .languaje{    
     position: fixed;
     top:22%;
@@ -134,10 +141,61 @@ header {
             border-radius: 5em;
         }
     }
+    button:hover{
+        padding: .5em;
+        border-style: none;
+        background-color: #cfcece; 
+        border-radius: 5em;
+        cursor: pointer;
+        img{
+            width:2em;
+            height: 1em;
+            border-radius: 5em;
+        }
+    }
     
 }
 
 
+.toggle {
+    display: none;
+  }
+  
+  .toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .sun,
+  .moon {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transition: top 0.3s;
+    user-select: none;
+  }
+  
+  .sun {
+    top: 0;
+  }
+  
+  .moon {
+    top: -150%;
+  }
+  
+  .toggle:checked + .toggle-label .sun {
+    top: 150%;
+  }
+  
+  .toggle:checked + .toggle-label .moon {
+    top: 0;
+  }
+  
 
 footer {
     background-color: #F6F5F5;
