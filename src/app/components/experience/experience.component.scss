@@ -1,0 +1,185 @@
+main {
+    margin: 1em;
+
+    section {
+        padding: 5%;
+        border-color: #F6F5F5;
+        border-style: ridge;
+        border-radius: 5em;
+
+        h2 {
+            font-family: 'Inconsolata', monospace;
+
+            font-size: 2em;
+
+        }
+
+        article.experience-list {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1em;
+          
+            ul {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              width: 100%;
+              list-style: none;
+              padding: 0; /* Remove default padding */
+          
+              li {
+                position: relative;
+                margin: 5%;
+                overflow: hidden; /* Ensure the image does not overflow outside the container */
+          
+                .image-container {
+                  position: relative; /* Set to relative to create stacking context for z-index */
+                }
+          
+                .content {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%); /* Center the content */
+                 /* Bring the content above the image overlay */
+                  background-color: rgba(141, 141, 141, 0.596); /* Set the background color for the content with transparency */
+                  padding: 3em;
+                  border-radius: 5em;
+                  text-align: center; /* Center the text horizontally */
+                  button {
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.2rem;
+                    padding: .5em;
+                    margin: .5em;
+                    border-radius: 5em;
+                    border-color: #2d3436;
+                    border-style: solid;
+
+
+                    background-color: #F6F5F5;
+                }
+                button:hover{
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.2rem;
+                    padding: .5em;
+                    margin: .5em;
+                    border-radius: 5em;
+                    border-color: #2d3436;
+                    border-style: solid;
+                    cursor:pointer;
+
+                    background-color: #F6F5F5;
+                }
+                }
+          
+                img {
+                  width: 100%;
+                  height: auto;
+                  position: relative; /* Set to relative to position the pseudo-element */
+                  
+                  border-radius: 5em;
+                }
+          
+               
+              }
+          
+              @media (max-width: 700px) {
+                grid-template-columns: 1fr 1fr;
+              }
+          
+              @media (max-width: 400px) {
+                grid-template-columns: 1fr;
+              }
+            }
+          }
+          
+          
+
+        article.experience-form {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1em;
+            padding: 5%;
+            border-color: #F6F5F5;
+            border-style: ridge;
+            border-radius: 5em;
+
+            form {
+                display: flex;
+                flex-direction: column;
+
+
+
+                label {
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.2rem;
+
+                    margin: 1%;
+                }
+
+                input {
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.2rem;
+                    padding: 1%;
+
+                    border-radius: 5em;
+                    border-color: #2d3436;
+                    border-style: none;
+                    background-color: #F6F5F5;
+                }
+
+                input:focus,
+                input:active {
+                    outline: none;
+                    border: none;
+                    box-shadow: none;
+                }
+
+                p {
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.2rem;
+                    color: red;
+
+                    margin: 1%;
+                }
+
+                button {
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.2rem;
+                    padding: 1%;
+                    margin: 1%;
+                    border-radius: 5em;
+                    border-color: #2d3436;
+                    border-style: solid;
+
+
+                    background-color: #F6F5F5;
+                }
+
+                button:hover {
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.2rem;
+                    padding: 1%;
+                    margin: 1%;
+                    border-radius: 5em;
+                    border-color: #2d3436;
+                    border-style: solid;
+                    cursor: pointer;
+
+                    background-color: #F6F5F5;
+                }
+
+                button:disabled {
+                    font-family: 'Raleway', sans-serif;
+                    font-size: 1.2rem;
+                    padding: 1%;
+                    margin: 1%;
+                    border-radius: 5em;
+                    border-color: #2d3436;
+                    border-style: solid;
+                    cursor: not-allowed;
+
+                    background-color: #F6F5F5;
+                }
+            }
+
+        }
+    }
+}

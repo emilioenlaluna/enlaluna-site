@@ -1,65 +1,72 @@
-<div *ngIf="auth.isLoggedIn">
-    <form [formGroup]="experienceForm" (ngSubmit)="submitExperienceData()" novalidate>
-      <label>Company</label>
-      <input type="text" formControlName="company" class="full-width" required />
-      <p *ngIf="experienceForm.controls['company'].errors?.['required']" class="error">
-        <sup>*</sup>Company required
-      </p>
-  
-      <label>Position</label>
-      <input type="text" formControlName="position" class="full-width" required />
-      <p *ngIf="experienceForm.controls['position'].errors?.['required']" class="error">
-        <sup>*</sup>Position required
-      </p>
-  
-      <label>Start Date</label>
-      <input type="text" formControlName="startDate" class="full-width" required />
-      <p *ngIf="experienceForm.controls['startDate'].errors?.['required']" class="error">
-        <sup>*</sup>Start Date Required
-      </p>
-  
-      <label>End Date</label>
-      <input type="text" formControlName="endDate" class="full-width" required />
-      <p *ngIf="experienceForm.controls['endDate'].errors?.['required']" class="error">
-        <sup>*</sup>End Date Required
-      </p>
-  
-      <label>Description</label>
-      <input type="text" formControlName="description" class="full-width" required />
-      <p *ngIf="experienceForm.controls['description'].errors?.['required']" class="error">
-        <sup>*</sup>Description required
-      </p>
-  
-      <label>Image</label>
-      <input type="text" formControlName="imagen" class="full-width" required />
-      <p *ngIf="experienceForm.controls['imagen'].errors?.['required']" class="error">
-        <sup>*</sup>Image Required
-      </p>
-  
-      <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
-      <button type="submit" class="btn btn--primary btn-wide btn--large full-width" [disabled]="!experienceForm.valid">
-        Send
-      </button>
-    </form>
-  </div>
-  
-  <hr>
-  <ul>
-    <li *ngFor="let experience of experiences">
-      <!-- Mostrar los campos de Experience -->
-      <h3>{{ experience.$key }}</h3>
-      <h3>{{ experience.company }}</h3>
-      <p>{{ experience.position }}</p>
-      <p>{{ experience.startDate }}</p>
-      <p>{{ experience.endDate }}</p>
-      <p>{{ experience.description }}</p>
-      <p>{{ experience.imagen }}</p>
-  
-      <div *ngIf="auth.isLoggedIn">
-        <button class="btn btn-danger" (click)="deleteExperience(experience.$key)">Eliminar</button>
-      </div>
-  
-      <hr>
-    </li>
-  </ul>
-  
+<main>
+  <section>
+    <h2>Experience</h2>
+    <article class="experience-form" *ngIf="auth.isLoggedIn">
+      <h3>Add Experience</h3>
+      <form [formGroup]="experienceForm" (ngSubmit)="submitExperienceData()" novalidate>
+        <label>Company</label>
+        <input type="text" formControlName="company" class="full-width" required />
+        <p *ngIf="experienceForm.controls['company'].errors?.['required']" class="error">
+          <sup>*</sup>Company required
+        </p>
+
+        <label>Position</label>
+        <input type="text" formControlName="position" class="full-width" required />
+        <p *ngIf="experienceForm.controls['position'].errors?.['required']" class="error">
+          <sup>*</sup>Position required
+        </p>
+
+        <label>Start Date</label>
+        <input type="text" formControlName="startDate" class="full-width" required />
+        <p *ngIf="experienceForm.controls['startDate'].errors?.['required']" class="error">
+          <sup>*</sup>Start Date Required
+        </p>
+
+        <label>End Date</label>
+        <input type="text" formControlName="endDate" class="full-width" required />
+        <p *ngIf="experienceForm.controls['endDate'].errors?.['required']" class="error">
+          <sup>*</sup>End Date Required
+        </p>
+
+        <label>Description</label>
+        <input type="text" formControlName="description" class="full-width" required />
+        <p *ngIf="experienceForm.controls['description'].errors?.['required']" class="error">
+          <sup>*</sup>Description required
+        </p>
+
+        <label>Image</label>
+        <input type="text" formControlName="imagen" class="full-width" required />
+        <p *ngIf="experienceForm.controls['imagen'].errors?.['required']" class="error">
+          <sup>*</sup>Image Required
+        </p>
+
+        <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">Reset</button>
+        <button type="submit" class="btn btn--primary btn-wide btn--large full-width"
+          [disabled]="!experienceForm.valid">
+          Send
+        </button>
+      </form>
+    </article>
+    <article class="experience-list">
+      <ul>
+        <li *ngFor="let experience of experiences">
+          <div class="image-container">
+            <img src="{{ experience.imagen }}" alt="{{ experience.description }}">
+            <div class="content">
+              <h3>{{ experience.company }}</h3>
+              <p>{{ experience.position }}</p>
+              <p>{{ experience.startDate }}</p>
+              <p>{{ experience.endDate }}</p>
+              <p>{{ experience.description }}</p>
+              <div *ngIf="auth.isLoggedIn">
+                <button class="delete" (click)="deleteExperience(experience.$key)">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </article>
+    
+  </section>
+
+</main>

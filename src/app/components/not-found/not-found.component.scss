@@ -1,0 +1,24 @@
+main{
+    section{
+        margin: 1em;
+        article{
+            padding: 5%;
+          
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 10em;
+                height: 10em;
+                border-radius: 5em;
+                
+            }
+            h2{
+                
+                font-size: 3em;
+            }
+        }
+    }
+}

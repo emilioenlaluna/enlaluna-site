@@ -3,14 +3,14 @@ main {
     section {
 
         font-family: 'Inconsolata', monospace;
-        margin: 1em;
-        padding: 3em;
+        margin: 1%;
+        padding: 5%;
         border-radius: 5em;
 
 
 
         article {
-            padding: 2em;
+            padding: 2%;
 
             h2 {
                 font-size: 2rem;
@@ -48,6 +48,7 @@ main {
 
             .contact-form {
                 margin:1em;
+                width: 100%;
                 form {
                     display: flex;
                     flex-direction: column;

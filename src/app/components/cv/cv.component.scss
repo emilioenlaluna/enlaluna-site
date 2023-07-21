@@ -1,39 +1,50 @@
-main{
-    section{
+main {
+    section {
         padding: 3em;
-        article{
-            h2{
+
+        article {
+            h2 {
                 padding: 3em;
                 font-family: 'Inconsolata', monospace;
             }
+
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-           button{
-            font-family: 'Raleway', sans-serif;
-            font-size: 1.2rem;
-            padding: .5em;
-            margin: .5em;
-            border-radius: 5em;
-            border-color: #2d3436;
-            border-style: solid;
+
+            button,
+            a {
+                font-family: 'Raleway', sans-serif;
+                font-size: 1.2rem;
+                padding: .5em;
+                margin: .5em;
+                border-radius: 5em;
+                border-color: #2d3436;
+                border-style: solid;
+                text-decoration: none;
 
 
-            background-color: #F6F5F5;
-           }
-           button:hover{
-            font-family: 'Raleway', sans-serif;
-            font-size: 1.2rem;
-            padding: .5em;
-            margin: .5em;
-            border-radius: 5em;
-            border-color: #2d3436;
-            border-style: solid;
-            cursor:pointer;
+                background-color: #F6F5F5;
+            }
 
-            background-color: #F6F5F5;
-        }
+            a:hover,
+            button:hover {
+                text-decoration: none;
+                font-family: 'Raleway', sans-serif;
+                font-size: 1.2rem;
+                padding: .5em;
+                margin: .5em;
+                border-radius: 5em;
+                border-color: #2d3436;
+                border-style: solid;
+                cursor: pointer;
+
+                background-color: #F6F5F5;
+            }
+            a, a:visited, a:hover, a:active {
+                color: #2d3436;
+            }
         }
     }
 }
