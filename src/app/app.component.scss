@@ -2,11 +2,16 @@
 
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #F6F5F5;
     border-radius: 0 0 5em 5em;
     padding: 1%;
     color: #2d3436;
     z-index: 2147483647;
+
 
     a, a:visited, a:hover, a:active {
         color: #2d3436;
