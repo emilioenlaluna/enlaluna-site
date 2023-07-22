@@ -26,7 +26,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
-
+import { QuillModule } from 'ngx-quill';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +54,7 @@ import { TranslocoRootModule } from './transloco-root.module';
     provideDatabase(() => getDatabase()),
     HttpClientModule,
     TranslocoRootModule,
+    QuillModule.forRoot()
   ],
   providers: [AuthService,{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]

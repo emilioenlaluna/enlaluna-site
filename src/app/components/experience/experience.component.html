@@ -5,37 +5,37 @@
       <h3>Add Experience</h3>
       <form [formGroup]="experienceForm" (ngSubmit)="submitExperienceData()" novalidate>
         <label>Company</label>
-        <input type="text" formControlName="company" class="full-width" required />
+        <input type="text" formControlName="company" class="full-width" required placeholder="Company Name" />
         <p *ngIf="experienceForm.controls['company'].errors?.['required']" class="error">
           <sup>*</sup>Company required
         </p>
 
         <label>Position</label>
-        <input type="text" formControlName="position" class="full-width" required />
+        <input type="text" formControlName="position" class="full-width" required placeholder="Position Name" />
         <p *ngIf="experienceForm.controls['position'].errors?.['required']" class="error">
           <sup>*</sup>Position required
         </p>
 
         <label>Start Date</label>
-        <input type="text" formControlName="startDate" class="full-width" required />
+        <input type="text" formControlName="startDate" class="full-width" required  placeholder="Start Date Data"  />
         <p *ngIf="experienceForm.controls['startDate'].errors?.['required']" class="error">
           <sup>*</sup>Start Date Required
         </p>
 
         <label>End Date</label>
-        <input type="text" formControlName="endDate" class="full-width" required />
+        <input type="text" formControlName="endDate" class="full-width" required placeholder="End Date Data"/>
         <p *ngIf="experienceForm.controls['endDate'].errors?.['required']" class="error">
           <sup>*</sup>End Date Required
         </p>
 
         <label>Description</label>
-        <input type="text" formControlName="description" class="full-width" required />
+        <quill-editor formControlName="description" ></quill-editor>
         <p *ngIf="experienceForm.controls['description'].errors?.['required']" class="error">
           <sup>*</sup>Description required
         </p>
 
         <label>Image</label>
-        <input type="text" formControlName="imagen" class="full-width" required />
+        <input type="text" formControlName="imagen" class="full-width" required placeholder="Image Url" />
         <p *ngIf="experienceForm.controls['imagen'].errors?.['required']" class="error">
           <sup>*</sup>Image Required
         </p>
@@ -51,13 +51,14 @@
       <ul>
         <li *ngFor="let experience of experiences">
           <div class="image-container">
-            <img src="{{ experience.imagen }}" alt="{{ experience.company }}">
+            <img src="{{ experience.imagen }}" alt="{{ experience.company }}" title="{{ experience.description }}">
             <div class="content">
               <h3>{{ experience.company }}</h3>
               <p>{{ experience.position }}</p>
               <p>{{ experience.startDate }}</p>
               <p>{{ experience.endDate }}</p>
-              <p>{{ experience.description }}</p>
+             
+              <button class="details" (click)="openModal(experience)">View Details</button>
               <div *ngIf="auth.isLoggedIn">
                 <button class="delete" (click)="deleteExperience(experience.$key)">Eliminar</button>
               </div>
@@ -66,6 +67,19 @@
         </li>
       </ul>
     </article>
+    
+    <div class="modal-container" [ngClass]="{'showModal': showModal}">
+      <div class="modal-content">
+        <h2>{{ selectedExperience.company }}</h2>
+        <p>{{ selectedExperience.position }}</p>
+        <p>{{ selectedExperience.startDate }}</p>
+        <p>{{ selectedExperience.endDate }}</p>
+        <div [innerHTML]="selectedExperience.description "></div>
+      
+        <button class="close" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+    
     
   </section>
 

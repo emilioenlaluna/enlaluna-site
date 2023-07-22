@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-
+/* You can add global styles to this file, and also import other style files */
+@import '~quill/dist/quill.bubble.css'; 
+ // or
+ @import '~quill/dist/quill.snow.css';
+ 
 * {
     margin: 0;
     padding: 0;

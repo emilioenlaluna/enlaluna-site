@@ -1,3 +1,4 @@
+
 main {
     
     margin: 1em;
@@ -12,6 +13,7 @@ main {
             font-size: 2em;
 
         }
+
 
         article.experience-list {
             font-family: 'Raleway', sans-serif;
@@ -181,6 +183,83 @@ main {
             }
 
         }
+        
+        /* modal.css */
+
+
+/* Modal container styles */
+.modal-container {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    z-index: 9999;
+  }
+  
+  /* Show the modal when showModal is true */
+  .modal-container.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Modal content styles */
+  .modal-content {
+    background-color: #ffffff;
+    max-width: 500px; /* Adjust the maximum width of the modal content as needed */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .modal-content p {
+    margin: 5px 0;
+  }
+  
+  .modal-content button {
+    padding: 8px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .modal-content button.close {
+    margin-top: 20px;
+    background-color: #e74c3c;
+  }
+  
+  .modal-content button.close:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Animation for the modal */
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content {
+    animation: modalFadeIn 0.3s ease-out;
+  }
+  
     }
 }
 
