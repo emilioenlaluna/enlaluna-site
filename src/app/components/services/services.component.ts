@@ -54,6 +54,26 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
     this.getServices();
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get the modal container element
+      const modalContainer = document.querySelector('.modal-container');
+
+      if (modalContainer) {
+        // Add the 'show' class to the modal container when the modal is opened
+        this.openModal = (experience: any): void => {
+          this.selectedService = experience;
+          this.showModal = true;
+          modalContainer.classList.add('show');
+        };
+
+        // Remove the 'show' class from the modal container when the modal is closed
+        this.closeModal = (): void => {
+          this.showModal = false;
+          this.selectedService = {};
+          modalContainer.classList.remove('show');
+        };
+      }
+    });
   }
 
   getServices() {
@@ -65,5 +85,23 @@ export class ServicesComponent implements OnInit {
   deleteService(serviceId: string | any) {
     this.serviceService.deleteServiceById(serviceId);
     this.getServices();
+  }
+
+  //Modal
+  showModal: boolean = false;
+  selectedService: any = {}; // Initialize selectedExperience as an empty object
+
+  // Your other existing code...
+
+  openModal(service: any): void {
+    this.selectedService = service;
+    this.showModal = true;
+   // document.querySelector('.modal-container').classList.add('show');
+  }
+
+  closeModal(): void {
+    this.showModal = false;
+    this.selectedService = {}; 
+    //document.querySelector('.modal-container').classList.remove('show');// Reset the selectedExperience object when closing the modal
   }
 }

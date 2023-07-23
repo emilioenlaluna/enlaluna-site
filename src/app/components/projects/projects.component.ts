@@ -62,6 +62,26 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit() {
     this.getProjects();
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get the modal container element
+      const modalContainer = document.querySelector('.modal-container');
+
+      if (modalContainer) {
+        // Add the 'show' class to the modal container when the modal is opened
+        this.openModal = (experience: any): void => {
+          this.selectedProject = experience;
+          this.showModal = true;
+          modalContainer.classList.add('show');
+        };
+
+        // Remove the 'show' class from the modal container when the modal is closed
+        this.closeModal = (): void => {
+          this.showModal = false;
+          this.selectedProject = {};
+          modalContainer.classList.remove('show');
+        };
+      }
+    });
   }
 
   getProjects() {
@@ -75,4 +95,22 @@ export class ProjectsComponent implements OnInit {
     this.getProjects();
   }
 
+
+  //Modal
+  showModal: boolean = false;
+  selectedProject: any = {}; // Initialize selectedExperience as an empty object
+
+  // Your other existing code...
+
+  openModal(project: any): void {
+    this.selectedProject = project;
+    this.showModal = true;
+   // document.querySelector('.modal-container').classList.add('show');
+  }
+
+  closeModal(): void {
+    this.showModal = false;
+    this.selectedProject = {}; 
+    //document.querySelector('.modal-container').classList.remove('show');// Reset the selectedExperience object when closing the modal
+  }
 }

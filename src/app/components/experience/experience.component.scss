@@ -22,6 +22,7 @@ main {
             ul {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
+              grid-template-rows: auto;
               width: 100%;
               list-style: none;
               padding: 0; /* Remove default padding */
@@ -209,11 +210,16 @@ main {
   /* Modal content styles */
   .modal-content {
     background-color: #ffffff;
-    width: 75%; /* Adjust the maximum width of the modal content as needed */
+    max-height: 75%;
+    /* Adjust the maximum width of the modal content as needed */
     padding: 1em;
     border-radius: 5em;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    overflow-y: auto;
+}
+.modal-content::-webkit-scrollbar {
+    width: 0; /* Set the width of the scrollbar to zero */
   }
   
   .modal-content h2 {

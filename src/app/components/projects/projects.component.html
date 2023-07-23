@@ -1,84 +1,114 @@
-<div *ngIf="auth.isLoggedIn">
-  <form [formGroup]="projectForm" (ngSubmit)="submitProjectData()" novalidate>
-    <label>Name</label>
-    <input type="text" formControlName="name" class="full-width" required />
-    <p *ngIf="projectForm.controls['name'].errors?.['required']" class="error">
-      <sup>*</sup>Name required
-    </p>
-    <p *ngIf="projectForm.controls['name'].errors?.['minlength']" class="error">
-      <sup>*</sup>Length Error
-    </p>
-
-    <label>Description</label>
-    <input type="text" formControlName="description" class="full-width" />
-    <p *ngIf="projectForm.controls['description'].errors?.['required']" class="error">
-      <sup>*</sup>Description required
-    </p>
-    <p *ngIf="projectForm.controls['description'].errors?.['minlength']" class="error">
-      <sup>*</sup>Length Error
-    </p>
-
-    <label>Technologies</label>
-    <input type="email" formControlName="technologies" class="full-width" required />
-    <p *ngIf="projectForm.controls['technologies'].errors?.['required']" class="error">
-      <sup>*</sup>Technologies required
-    </p>
-
-    <label>Start Date</label>
-    <input type="text" formControlName="startDate" class="full-width" required />
-    <p *ngIf="projectForm.controls['startDate'].errors?.['required']" class="error">
-      <sup>*</sup>Start Date Required
-    </p>
-
-    <label>End Date</label>
-    <input type="text" formControlName="endDate" class="full-width" required />
-    <p *ngIf="projectForm.controls['endDate'].errors?.['required']" class="error">
-      <sup>*</sup>End Date Required
-    </p>
-
-    <label>Image</label>
-    <input type="text" formControlName="imagen" class="full-width" required />
-    <p *ngIf="projectForm.controls['imagen'].errors?.['required']" class="error">
-      <sup>*</sup>Image Required
-    </p>
-
-    <label>Github Link</label>
-    <input type="text" formControlName="githubLink" class="full-width" required />
-    <p *ngIf="projectForm.controls['githubLink'].errors?.['required']" class="error">
-      <sup>*</sup>Github Link Required
-    </p>
-
-
-  
-
-    <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">
-      Reset
-    </button>
-    <button type="submit" class="btn btn--primary btn-wide btn--large full-width" value="Send Message"  [disabled]="!projectForm.valid">
-     Send
-    </button>
-  </form>
-</div>
-
-  <hr>
-  <ul>
-    <li *ngFor="let project of projects">
-        <h3>{{ project.$key }}</h3>
-      <h3>{{ project.name }}</h3>
-      <p>{{ project.description }}</p>
-      <p>{{ project.technologies }}</p>
-      <p>{{ project.startDate }}</p>
-      <p>{{ project.endDate }}</p>
-      <p>{{ project.imagen }}</p>
-      <p>{{ project.githubLink }}</p>
-      <div *ngIf="auth.isLoggedIn">
-        <button class="btn btn-danger" (click)="deleteProject(project.$key)">Eliminar</button>
-      </div>
+<main>
+  <section>
+    <h2>Projects</h2>
+    <article class="project-form" *ngIf="auth.isLoggedIn">
+      <h3>Add Project</h3>
+      <form [formGroup]="projectForm" (ngSubmit)="submitProjectData()" novalidate>
+        <label>Name</label>
+        <input type="text" formControlName="name" class="full-width" required />
+        <p *ngIf="projectForm.controls['name'].errors?.['required']" class="error">
+          <sup>*</sup>Name required
+        </p>
+        <p *ngIf="projectForm.controls['name'].errors?.['minlength']" class="error">
+          <sup>*</sup>Length Error
+        </p>
+    
+        <label>Description</label>
+        <quill-editor formControlName="description" ></quill-editor>
+        <p *ngIf="projectForm.controls['description'].errors?.['required']" class="error">
+          <sup>*</sup>Description required
+        </p>
+        <p *ngIf="projectForm.controls['description'].errors?.['minlength']" class="error">
+          <sup>*</sup>Length Error
+        </p>
+    
+        <label>Technologies</label>
+        <input type="email" formControlName="technologies" class="full-width" required />
+        <p *ngIf="projectForm.controls['technologies'].errors?.['required']" class="error">
+          <sup>*</sup>Technologies required
+        </p>
+    
+        <label>Start Date</label>
+        <input type="text" formControlName="startDate" class="full-width" required />
+        <p *ngIf="projectForm.controls['startDate'].errors?.['required']" class="error">
+          <sup>*</sup>Start Date Required
+        </p>
+    
+        <label>End Date</label>
+        <input type="text" formControlName="endDate" class="full-width" required />
+        <p *ngIf="projectForm.controls['endDate'].errors?.['required']" class="error">
+          <sup>*</sup>End Date Required
+        </p>
+    
+        <label>Image</label>
+        <input type="text" formControlName="imagen" class="full-width" required />
+        <p *ngIf="projectForm.controls['imagen'].errors?.['required']" class="error">
+          <sup>*</sup>Image Required
+        </p>
+    
+        <label>Github Link</label>
+        <input type="text" formControlName="githubLink" class="full-width" required />
+        <p *ngIf="projectForm.controls['githubLink'].errors?.['required']" class="error">
+          <sup>*</sup>Github Link Required
+        </p>
+    
+    
       
-      <a *ngIf="project.githubLink" [href]="project.githubLink" target="_blank">GitHub Repository</a>
-      <hr>
-    </li>
-  </ul>
-  
+    
+        <button type="button" class="btn btn-secondary gap-right" (click)="ResetForm()">
+          Reset
+        </button>
+        <button type="submit" class="btn btn--primary btn-wide btn--large full-width" value="Send Message"  [disabled]="!projectForm.valid">
+         Send
+        </button>
+      </form>
+    </article>
+    <article class="project-list">
+      <ul>
+        <li *ngFor="let project of projects">
+          <div class="image-container">
+            <img src="{{ project.imagen }}" alt="{{ project.name }}" title="{{ project.description }}">
+            <div class="content">
+              
+              <h3>{{ project.name }}</h3>
+             
+              <p>{{ project.technologies }}</p>
+              <p>{{ project.startDate }}</p>
+              <p>{{ project.endDate }}</p>
+             
+              <div *ngIf="auth.isLoggedIn">
+                <button class="btn btn-danger" (click)="deleteProject(project.$key)">Eliminar</button>
+              </div>
+              
+              <a *ngIf="project.githubLink" [href]="project.githubLink" target="_blank">GitHub Repository</a>
+             
+              <button class="details" (click)="openModal(project)">View Details</button>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    </article>
+    
+    <div class="modal-container" [ngClass]="{'showModal': showModal}">
+      <div class="modal-content">
+        <h2>{{ selectedProject.name }}</h2>
+        <p>{{ selectedProject.technologies }}</p>
+        <p>{{ selectedProject.startDate }}</p>
+        <p>{{ selectedProject.endDate }}</p>
+        
+        <a *ngIf="selectedProject.githubLink" [href]="selectedProject.githubLink" target="_blank">GitHub Repository</a>
+             
+        <div [innerHTML]="selectedProject.description "></div>
+      
+        <button class="close" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+    
+    
+  </section>
 
+</main>
+
+  
  
