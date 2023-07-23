@@ -209,20 +209,20 @@ main {
   /* Modal content styles */
   .modal-content {
     background-color: #ffffff;
-    max-width: 500px; /* Adjust the maximum width of the modal content as needed */
-    padding: 20px;
-    border-radius: 5px;
+    width: 75%; /* Adjust the maximum width of the modal content as needed */
+    padding: 1em;
+    border-radius: 5em;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
   }
   
   .modal-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 2em;
+    margin-bottom: 1em;
   }
   
   .modal-content p {
-    margin: 5px 0;
+    margin: 1em 0;
   }
   
   .modal-content button {
