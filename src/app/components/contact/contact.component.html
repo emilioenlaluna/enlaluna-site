@@ -1,6 +1,6 @@
 <main>
     <section>
-      <article>
+      <article class="info-contact">
         <h2>{{ 'contact.contactTitle' | transloco }}</h2>
         <h3>{{ 'contact.contactSubtitle' | transloco }}</h3>
       </article>
@@ -17,8 +17,8 @@
         </div>
         <div class="contact-form">
           <form [formGroup]="contactForm" (ngSubmit)="submitContactData()" novalidate>
-            <label>{{ 'contact.firstNameLabel' | transloco }}</label>
-            <input type="text" formControlName="nombre" class="form-control" required />
+            <label for="nombre">{{ 'contact.firstNameLabel' | transloco }}</label>
+            <input type="text" id="nombre" formControlName="nombre" class="form-control" required />
             <p *ngIf="contactForm.controls['nombre'].errors?.['required']" class="error">
               <sup>*</sup>{{ 'contact.firstNameRequiredError' | transloco }}
             </p>
@@ -26,8 +26,8 @@
               <sup>*</sup>{{ 'contact.firstNameMinLengthError' | transloco }}
             </p>
     
-            <label>{{ 'contact.matterLabel' | transloco }}</label>
-            <input type="text" formControlName="asunto" class="form-control" />
+            <label for="asunto">{{ 'contact.matterLabel' | transloco }}</label>
+            <input type="text" id="asunto" formControlName="asunto" class="form-control" />
             <p *ngIf="contactForm.controls['asunto'].errors?.['required']" class="error">
               <sup>*</sup>{{ 'contact.matterRequiredError' | transloco }}
             </p>
@@ -35,19 +35,19 @@
               <sup>*</sup>{{ 'contact.matterMinLengthError' | transloco }}
             </p>
     
-            <label>{{ 'contact.emailLabel' | transloco }}</label>
-            <input type="email" formControlName="correo" class="form-control" required />
+            <label for="correo">{{ 'contact.emailLabel' | transloco }}</label>
+            <input type="email" id="correo" formControlName="correo" class="form-control" required />
             <p *ngIf="contactForm.controls['correo'].errors?.['required']" class="error">
               <sup>*</sup>{{ 'contact.emailRequiredError' | transloco }}
             </p>
     
-            <label>{{ 'contact.mobileNumberLabel' | transloco }}</label>
-            <input type="text" formControlName="numero" class="form-control" required />
+            <label for="numero">{{ 'contact.mobileNumberLabel' | transloco }}</label>
+            <input type="text"  id="numero" formControlName="numero" class="form-control" required />
             <p *ngIf="contactForm.controls['numero'].errors?.['required']" class="error">
               <sup>*</sup>{{ 'contact.mobileNumberRequiredError' | transloco }}
             </p>
     
-            <label>{{ 'contact.descriptionLabel' | transloco }}</label>
+            <label for="descripcion">{{ 'contact.descriptionLabel' | transloco }}</label>
             <input type="text" formControlName="descripcion" class="form-control" required />
             <p *ngIf="contactForm.controls['descripcion'].errors?.['required']" class="error">
               <sup>*</sup>{{ 'contact.descriptionRequiredError' | transloco }}

@@ -27,7 +27,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 import { QuillModule } from 'ngx-quill';
-import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +55,7 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
     HttpClientModule,
     TranslocoRootModule,
     QuillModule.forRoot(),
-    RichTextEditorAllModule,
+
   ],
   providers: [AuthService,{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
